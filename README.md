@@ -15,7 +15,7 @@ Redis (optional): Cache layer for storing frequently accessed data
 Installation and Setup
 1. Clone the repository:
 
-git clone https://github.com/subhashish2803/backend-api.git
+git clone https://github.com/subhashish2803/BharatFd-faq_management.git
 2. Navigate into the project directory:
 
 cd backend-api
@@ -24,8 +24,8 @@ cd backend-api
 npm install
 4. Create a .env file in the root directory and add the following environment variables:
 
-MONGO_URI=your_mongo_connection_string
-PORT=4000
+URI=mongodb+srv://ashu:ashu1234@cluster0.k5o2w.mongodb.net/mydb?retryWrites=true&w=majority
+PORT=4001
 Replace your_mongo_connection_string with your MongoDB URI connection string.
 
 5. Start the application:
@@ -34,7 +34,8 @@ npm start
 The server will start on port 4000 by default. If you have set a different port in the .env file, it will use that.
 
 6. Access the API:
-Open a browser and go to http://localhost:4001 or 4000 to access the API.
+Open a browser and go to http://localhost:40001/api/faqs
+ or 4000 to access the API.
 
 API Endpoints
 1. POST /api/faqs
