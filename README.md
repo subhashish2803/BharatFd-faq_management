@@ -199,3 +199,7 @@ backend-api/
 
 Conclusion
 This backend API enables easy management of FAQs with features like multilingual support and caching. With the help of Docker, it is simple to deploy and scale in various environments. Through Git and version control, collaboration is made easy.
+
+
+![My image](Myimage1.png)
+
