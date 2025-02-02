@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ System</title>
+</head>
+<body>
+    <h1>FAQ System</h1>
+    <label for="language">Choose Language:</label>
+    <select id="language">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+        <option value="bn">Bengali</option>
+    </select>
+    <button onclick="fetchFAQs()">Get FAQs</button>
+    <ul id="faq-list"></ul>
+
+    <script>
+        async function fetchFAQs() {
+    const lang = document.getElementById("language").value;
+    const apiUrl = `http://localhost:4001/api/faqs/?lang=${lang}`;
+
+    try {
+        console.log("Fetching from:", apiUrl);
+        const response = await fetch(apiUrl, {
+            method: "GET",
+            headers: { "Content-Type": "application/json" }
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log("Fetched FAQs:", data);
+
+        const faqList = document.getElementById("faq-list");
+        faqList.innerHTML = "";
+
+        data.forEach(faq => {
+            const li = document.createElement("li");
+            li.innerHTML = `<strong>${faq.question}</strong>: ${faq.answer}`;
+            faqList.appendChild(li);
+        });
+
+    } catch (error) {
+        console.error("Error fetching FAQs:", error);
+        alert("Failed to fetch FAQs. Check console for details.");
+    }
+}
+
+    </script>
+</body>
+</html>
