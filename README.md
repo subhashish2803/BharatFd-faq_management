@@ -34,7 +34,7 @@ npm start
 The server will start on port 4000 by default. If you have set a different port in the .env file, it will use that.
 
 6. Access the API:
-Open a browser and go to http://localhost:40001/api/faqs
+Open a browser and go to http://localhost:4001/api/faqs
  or 4000 to access the API.
 
 API Endpoints
